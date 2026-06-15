@@ -12,7 +12,6 @@
  * is an explicit, separate command (PUB-001).
  */
 import { execSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
 import { copyFile, mkdir, readdir, rm } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { scan, serveDirectory } from '@vibecheck/scanner';
@@ -27,12 +26,15 @@ const snapshotDir = resolve(repoRoot, 'apps/report-viewer/public/report');
 const updateSnapshot = process.argv.includes('--snapshot');
 
 async function ensureFixtureBuilt(): Promise<void> {
-  if (existsSync(join(fixtureDist, 'index.html'))) {
-    console.log('· Demo fixture already built.');
-    return;
-  }
-  console.log('· Building demo fixture…');
-  execSync('npm run build -w @vibecheck/demo-fixture', { cwd: repoRoot, stdio: 'inherit' });
+  // Always produce a fresh PRODUCTION build with NODE_ENV=production. This never
+  // reuses a possibly dev/test bundle (which would double the demo's raw counts
+  // via React StrictMode) and matches what the integration test builds.
+  console.log('· Building demo fixture (production)…');
+  execSync('npm run build -w @vibecheck/demo-fixture', {
+    cwd: repoRoot,
+    stdio: 'inherit',
+    env: { ...process.env, NODE_ENV: 'production' },
+  });
 }
 
 async function writeSnapshot(reportDir: string): Promise<void> {

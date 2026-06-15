@@ -1,5 +1,5 @@
 import { execSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { mkdir, mkdtemp, rm, stat } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,11 +14,31 @@ const tmpRoot = resolve(repoRoot, '.tmp-test');
 
 let server: StaticServer;
 let outputRoot: string;
+let fixtureBundle = '';
+
+/** Concatenate the built fixture's JS bundle(s) so we can inspect build mode. */
+function readFixtureBundle(): string {
+  const assets = join(fixtureDist, 'assets');
+  return readdirSync(assets)
+    .filter((f) => f.endsWith('.js'))
+    .map((f) => readFileSync(join(assets, f), 'utf8'))
+    .join('\n');
+}
 
 beforeAll(async () => {
-  if (!existsSync(join(fixtureDist, 'index.html'))) {
-    execSync('npm run build -w @vibecheck/demo-fixture', { cwd: repoRoot, stdio: 'inherit' });
-  }
+  // Always build the demo fixture as a PRODUCTION bundle, explicitly forcing
+  // NODE_ENV=production. Vitest runs with NODE_ENV=test, which would otherwise
+  // make @vitejs/plugin-react emit a React *development* bundle (jsxDEV +
+  // StrictMode double-invoked effects), doubling the seeded raw event counts
+  // (e.g. 18 console errors instead of 9). Forcing production yields the exact
+  // same bundle the real demo scan uses, and we never reuse a possibly-dev dist
+  // left behind by an earlier run.
+  execSync('npm run build -w @vibecheck/demo-fixture', {
+    cwd: repoRoot,
+    stdio: 'inherit',
+    env: { ...process.env, NODE_ENV: 'production' },
+  });
+  fixtureBundle = readFixtureBundle();
   server = await serveDirectory(fixtureDist);
   await mkdir(tmpRoot, { recursive: true });
   // Keep test output inside the project (git-ignored), never in the OS temp dir.
@@ -35,12 +55,19 @@ afterAll(async () => {
 });
 
 describe('scanner integration against the demo fixture', () => {
+  it('serves a production fixture build (no React dev double-effects)', () => {
+    // A production bundle has no jsxDEV dev runtime and embeds no absolute
+    // source paths. This guarantees the exact raw-count assertions below run
+    // against a production fixture, not a StrictMode-doubled development build.
+    expect(fixtureBundle).not.toContain('jsxDEV');
+    expect(fixtureBundle).not.toContain('/src/App');
+  });
+
   it('captures the exact deliberately seeded defects with real browser evidence', async () => {
     // Generous (but bounded) per-viewport navigation timeout and settle window so
     // a cold or load-stressed CI runner reliably renders all three viewports and
     // captures every seeded async event (the setTimeout page error and the two
-    // fetches). This removes the transient under-load flake at its source without
-    // retries or masking; defaults stay unchanged for production scans.
+    // fetches). Defaults stay unchanged for production scans.
     const { report, reportDir } = await scan({
       url: server.url,
       outputRoot,
@@ -96,10 +123,20 @@ describe('scanner integration against the demo fixture', () => {
     // The demo only loads loopback resources: no security blocks.
     expect(report.securityFindings).toHaveLength(0);
 
-    // Unique vs raw: the seeded defects repeat across viewports.
-    expect(report.summary.observations.console).toBe(report.summary.uniqueIssues.console * 3);
-    expect(report.summary.uniqueIssues.pageErrors).toBe(1);
+    // Exact raw observations: each seeded defect occurs once per viewport on a
+    // production build (no StrictMode doubling) → 3 each across 3 viewports.
+    expect(report.summary.observations.console).toBe(9);
     expect(report.summary.observations.pageErrors).toBe(3);
+    expect(report.summary.observations.failedRequests).toBe(3);
+    expect(report.summary.observations.httpErrors).toBe(3);
+    expect(report.summary.observations.accessibility).toBe(2);
+
+    // Exact unique issues: deterministic grouping by signature.
+    expect(report.summary.uniqueIssues.console).toBe(3);
+    expect(report.summary.uniqueIssues.pageErrors).toBe(1);
+    expect(report.summary.uniqueIssues.failedRequests).toBe(1);
+    expect(report.summary.uniqueIssues.httpErrors).toBe(1);
+    expect(report.summary.uniqueIssues.accessibility).toBe(2);
 
     // Status: a clean, complete scan of a failing page.
     expect(report.scanStatus).toBe('completed');
