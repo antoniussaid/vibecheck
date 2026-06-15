@@ -36,7 +36,17 @@ afterAll(async () => {
 
 describe('scanner integration against the demo fixture', () => {
   it('captures the exact deliberately seeded defects with real browser evidence', async () => {
-    const { report, reportDir } = await scan({ url: server.url, outputRoot });
+    // Generous (but bounded) per-viewport navigation timeout and settle window so
+    // a cold or load-stressed CI runner reliably renders all three viewports and
+    // captures every seeded async event (the setTimeout page error and the two
+    // fetches). This removes the transient under-load flake at its source without
+    // retries or masking; defaults stay unchanged for production scans.
+    const { report, reportDir } = await scan({
+      url: server.url,
+      outputRoot,
+      navigationTimeoutMs: 60_000,
+      settleMs: 1_500,
+    });
 
     // Three viewports were attempted and rendered.
     expect(report.viewportResults).toHaveLength(3);

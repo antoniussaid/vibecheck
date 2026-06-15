@@ -1,0 +1,19 @@
+# Normalize all text files to LF in the repository and on checkout, so a
+# Windows checkout with core.autocrlf=true no longer produces CRLF / mixed
+# line endings (which broke `npm run format:check` in a fresh clone).
+* text=auto eol=lf
+
+# Binary assets must never be line-ending normalized.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+*.zip binary
