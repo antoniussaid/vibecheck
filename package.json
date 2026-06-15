@@ -16,6 +16,7 @@
     "dev:fixture": "npm run dev -w @vibecheck/demo-fixture",
     "dev:report": "npm run dev -w @vibecheck/report-viewer",
     "build": "npm run build -w @vibecheck/shared && npm run build -w @vibecheck/report-schema && npm run build -w @vibecheck/scanner && npm run build -w @vibecheck/demo-fixture && npm run build -w @vibecheck/report-viewer",
+    "build:viewer": "npm run build -w @vibecheck/report-viewer",
     "test": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 vitest run",
     "lint": "eslint .",
     "format": "prettier --write .",

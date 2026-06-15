@@ -10,6 +10,15 @@ each backed by real, observed evidence.
 > **Status: Wave 0 (+ fix wave 0.1) — local-first development build.** This is an
 > early, honest milestone. It is _not_ a hosted service. See [Scope](#scope).
 
+## Live demo
+
+A static **read-only** demo of the report viewer (with the committed example
+report) is being prepared for Cloudflare Pages — it renders the curated snapshot
+with no backend and no scanner. The public URL will be added here once it is
+live; until then it is **not yet deployed**. The scanner itself always runs
+locally and only against loopback targets. See
+[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
 ## Why this is not a ChatGPT prompt
 
 A chat assistant can _guess_ what might be broken. VibeCheck **renders the real
