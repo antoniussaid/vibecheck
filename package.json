@@ -1,0 +1,41 @@
+{
+  "name": "vibecheck",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VibeCheck – Automated Prototype Quality Lab. Turn a web prototype into a reproducible visual quality report with real browser evidence.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:fixture": "npm run dev -w @vibecheck/demo-fixture",
+    "dev:report": "npm run dev -w @vibecheck/report-viewer",
+    "build": "npm run build -w @vibecheck/shared && npm run build -w @vibecheck/report-schema && npm run build -w @vibecheck/scanner && npm run build -w @vibecheck/demo-fixture && npm run build -w @vibecheck/report-viewer",
+    "test": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "scan": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx packages/scanner/src/cli.ts",
+    "scan:demo": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx scripts/demo-scan.ts",
+    "generate:demo-report": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx scripts/demo-scan.ts",
+    "update:demo-snapshot": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx scripts/demo-scan.ts --snapshot",
+    "verify:demo-snapshot": "tsx scripts/verify-demo-snapshot.ts",
+    "playwright:install": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1",
+    "vitest": "^2.1.8"
+  }
+}

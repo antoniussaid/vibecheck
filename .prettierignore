@@ -1,0 +1,12 @@
+node_modules
+dist
+coverage
+reports
+.internal
+.tmp-test
+CODEX_WAVE0_REVIEW.md
+CLAUDE_WAVE0_SELF_REVIEW.md
+apps/report-viewer/public/report
+packages/scanner/test-fixtures
+package-lock.json
+*.png

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Service worker fixture</title>
+  </head>
+  <body>
+    <main>
+      <h1>Service worker fixture</h1>
+    </main>
+    <script>
+      // Attempt to register a service worker that would fetch an external host.
+      // With serviceWorkers: 'block' the registration never controls the page,
+      // and even if it ran, the egress policy aborts the external request.
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').catch(function () {});
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>External resources fixture</title>
+    <!-- External stylesheet (must be blocked) -->
+    <link rel="stylesheet" href="http://example.invalid/style.css" />
+    <style>
+      /* External font (must be blocked) */
+      @font-face {
+        font-family: 'Evil';
+        src: url('http://example.invalid/font.woff2') format('woff2');
+      }
+      body {
+        font-family: 'Evil', system-ui, sans-serif;
+      }
+    </style>
+    <!-- External script (must be blocked) -->
+    <script src="http://example.invalid/tracker.js"></script>
+  </head>
+  <body>
+    <h1>External resources fixture</h1>
+    <!-- External image (must be blocked) -->
+    <img src="http://example.invalid/pixel.png" alt="tracking pixel" />
+    <!-- External iframe (must be blocked) -->
+    <iframe src="http://example.invalid/frame" title="external frame"></iframe>
+    <script>
+      // External fetch (must be blocked, not contacted)
+      fetch('http://example.invalid/api/collect').catch(function () {});
+      // External WebSocket (must be blocked, not contacted)
+      try {
+        new WebSocket('ws://example.invalid/socket');
+      } catch (e) {
+        /* ignored */
+      }
+    </script>
+  </body>
+</html>

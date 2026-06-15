@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "1.1.0",
+  "runId": "20260615-074558-833-4c1dcf",
+  "requestedUrl": "http://127.0.0.1:30167/",
+  "finalUrl": "http://127.0.0.1:30167/",
+  "startedAt": "2026-06-15T07:45:58.833Z",
+  "completedAt": "2026-06-15T07:46:05.036Z",
+  "durationMs": 6203,
+  "scanStatus": "completed",
+  "browser": {
+    "name": "chromium",
+    "version": "148.0.7778.96",
+    "engine": "Blink"
+  },
+  "viewportResults": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "ok": true,
+      "title": "VibeCheck Demo Shop",
+      "finalUrl": "http://127.0.0.1:30167/",
+      "screenshotPath": "desktop.png",
+      "error": null
+    },
+    {
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "ok": true,
+      "title": "VibeCheck Demo Shop",
+      "finalUrl": "http://127.0.0.1:30167/",
+      "screenshotPath": "tablet.png",
+      "error": null
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "ok": true,
+      "title": "VibeCheck Demo Shop",
+      "finalUrl": "http://127.0.0.1:30167/",
+      "screenshotPath": "mobile.png",
+      "error": null
+    }
+  ],
+  "screenshots": [
+    {
+      "viewport": "desktop",
+      "path": "desktop.png",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "viewport": "tablet",
+      "path": "tablet.png",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "viewport": "mobile",
+      "path": "mobile.png",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "consoleMessages": [
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated runtime error while computing cart total.",
+      "source": "http://127.0.0.1:30167/assets/index-BsYHHrmG.js:43:257",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:45:59.068Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "source": "http://127.0.0.1:30167/api/products:0:0",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:45:59.103Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "source": "http://127.0.0.1:30167/__vibecheck/dead:0:0",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:45:59.104Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated runtime error while computing cart total.",
+      "source": "http://127.0.0.1:30167/assets/index-BsYHHrmG.js:43:257",
+      "viewport": "tablet",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:01.342Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "source": "http://127.0.0.1:30167/api/products:0:0",
+      "viewport": "tablet",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:01.374Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "source": "http://127.0.0.1:30167/__vibecheck/dead:0:0",
+      "viewport": "tablet",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:01.375Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated runtime error while computing cart total.",
+      "source": "http://127.0.0.1:30167/assets/index-BsYHHrmG.js:43:257",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:03.315Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "source": "http://127.0.0.1:30167/api/products:0:0",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:03.358Z"
+    },
+    {
+      "category": "console",
+      "level": "error",
+      "severity": "error",
+      "message": "Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "source": "http://127.0.0.1:30167/__vibecheck/dead:0:0",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:03.358Z"
+    }
+  ],
+  "pageErrors": [
+    {
+      "category": "page-error",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated uncaught error in analytics handler.",
+      "stack": "Error: VibeCheck demo: simulated uncaught error in analytics handler.\n    at http://127.0.0.1:30167/assets/index-BsYHHrmG.js:44:435",
+      "source": null,
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:45:59.118Z"
+    },
+    {
+      "category": "page-error",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated uncaught error in analytics handler.",
+      "stack": "Error: VibeCheck demo: simulated uncaught error in analytics handler.\n    at http://127.0.0.1:30167/assets/index-BsYHHrmG.js:44:435",
+      "source": null,
+      "viewport": "tablet",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:01.396Z"
+    },
+    {
+      "category": "page-error",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated uncaught error in analytics handler.",
+      "stack": "Error: VibeCheck demo: simulated uncaught error in analytics handler.\n    at http://127.0.0.1:30167/assets/index-BsYHHrmG.js:44:435",
+      "source": null,
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:30167/",
+      "timestamp": "2026-06-15T07:46:03.366Z"
+    }
+  ],
+  "failedRequests": [
+    {
+      "category": "failed-request",
+      "severity": "error",
+      "message": "net::ERR_EMPTY_RESPONSE",
+      "requestUrl": "http://127.0.0.1:30167/__vibecheck/dead",
+      "method": "GET",
+      "resourceType": "fetch",
+      "viewport": "desktop",
+      "timestamp": "2026-06-15T07:45:59.104Z"
+    },
+    {
+      "category": "failed-request",
+      "severity": "error",
+      "message": "net::ERR_EMPTY_RESPONSE",
+      "requestUrl": "http://127.0.0.1:30167/__vibecheck/dead",
+      "method": "GET",
+      "resourceType": "fetch",
+      "viewport": "tablet",
+      "timestamp": "2026-06-15T07:46:01.374Z"
+    },
+    {
+      "category": "failed-request",
+      "severity": "error",
+      "message": "net::ERR_EMPTY_RESPONSE",
+      "requestUrl": "http://127.0.0.1:30167/__vibecheck/dead",
+      "method": "GET",
+      "resourceType": "fetch",
+      "viewport": "mobile",
+      "timestamp": "2026-06-15T07:46:03.358Z"
+    }
+  ],
+  "httpErrors": [
+    {
+      "category": "http-error",
+      "severity": "error",
+      "message": "404 Not Found for http://127.0.0.1:30167/api/products",
+      "requestUrl": "http://127.0.0.1:30167/api/products",
+      "status": 404,
+      "statusText": "Not Found",
+      "method": "GET",
+      "resourceType": "fetch",
+      "viewport": "desktop",
+      "timestamp": "2026-06-15T07:45:59.103Z"
+    },
+    {
+      "category": "http-error",
+      "severity": "error",
+      "message": "404 Not Found for http://127.0.0.1:30167/api/products",
+      "requestUrl": "http://127.0.0.1:30167/api/products",
+      "status": 404,
+      "statusText": "Not Found",
+      "method": "GET",
+      "resourceType": "fetch",
+      "viewport": "tablet",
+      "timestamp": "2026-06-15T07:46:01.374Z"
+    },
+    {
+      "category": "http-error",
+      "severity": "error",
+      "message": "404 Not Found for http://127.0.0.1:30167/api/products",
+      "requestUrl": "http://127.0.0.1:30167/api/products",
+      "status": 404,
+      "statusText": "Not Found",
+      "method": "GET",
+      "resourceType": "fetch",
+      "viewport": "mobile",
+      "timestamp": "2026-06-15T07:46:03.358Z"
+    }
+  ],
+  "accessibilityFindings": [
+    {
+      "category": "accessibility",
+      "severity": "critical",
+      "ruleId": "image-alt",
+      "message": "Images must have alternative text",
+      "impact": "critical",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright",
+      "nodes": [
+        {
+          "target": [
+            "li:nth-child(1) > img"
+          ],
+          "html": "<img class=\"card__image\" src=\"data:image/svg+xml;u...\">"
+        },
+        {
+          "target": [
+            "li:nth-child(2) > img"
+          ],
+          "html": "<img class=\"card__image\" src=\"data:image/svg+xml;u...\">"
+        },
+        {
+          "target": [
+            "li:nth-child(3) > img"
+          ],
+          "html": "<img class=\"card__image\" src=\"data:image/svg+xml;u...\">"
+        },
+        {
+          "target": [
+            "li:nth-child(4) > img"
+          ],
+          "html": "<img class=\"card__image\" src=\"data:image/svg+xml;u...\">"
+        }
+      ],
+      "viewport": "desktop",
+      "timestamp": "2026-06-15T07:46:01.241Z"
+    },
+    {
+      "category": "accessibility",
+      "severity": "critical",
+      "ruleId": "label",
+      "message": "Form elements must have labels",
+      "impact": "critical",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/label?application=playwright",
+      "nodes": [
+        {
+          "target": [
+            "input"
+          ],
+          "html": "<input class=\"newsletter__input\" type=\"email\" value=\"\" style=\"\">"
+        }
+      ],
+      "viewport": "desktop",
+      "timestamp": "2026-06-15T07:46:01.241Z"
+    }
+  ],
+  "securityFindings": [],
+  "issueGroups": [
+    {
+      "category": "console",
+      "signature": "console|Failed to load resource: net::ERR_EMPTY_RESPONSE|http://127.0.0.1:30167/__vibecheck/dead:0:0",
+      "severity": "error",
+      "message": "Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "observations": 3,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "url": "http://127.0.0.1:30167/",
+      "source": "http://127.0.0.1:30167/__vibecheck/dead:0:0"
+    },
+    {
+      "category": "console",
+      "signature": "console|Failed to load resource: the server responded with a status of 404 (Not Found)|http://127.0.0.1:30167/api/products:0:0",
+      "severity": "error",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "observations": 3,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "url": "http://127.0.0.1:30167/",
+      "source": "http://127.0.0.1:30167/api/products:0:0"
+    },
+    {
+      "category": "console",
+      "signature": "console|VibeCheck demo: simulated runtime error while computing cart total.|http://127.0.0.1:30167/assets/index-BsYHHrmG.js:43:257",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated runtime error while computing cart total.",
+      "observations": 3,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "url": "http://127.0.0.1:30167/",
+      "source": "http://127.0.0.1:30167/assets/index-BsYHHrmG.js:43:257"
+    },
+    {
+      "category": "page-error",
+      "signature": "page-error|VibeCheck demo: simulated uncaught error in analytics handler.",
+      "severity": "error",
+      "message": "VibeCheck demo: simulated uncaught error in analytics handler.",
+      "observations": 3,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "url": "http://127.0.0.1:30167/",
+      "source": null
+    },
+    {
+      "category": "failed-request",
+      "signature": "failed-request|http://127.0.0.1:30167/__vibecheck/dead|net::ERR_EMPTY_RESPONSE",
+      "severity": "error",
+      "message": "net::ERR_EMPTY_RESPONSE",
+      "observations": 3,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "url": "http://127.0.0.1:30167/__vibecheck/dead",
+      "source": null
+    },
+    {
+      "category": "http-error",
+      "signature": "http-error|http://127.0.0.1:30167/api/products|404",
+      "severity": "error",
+      "message": "404 Not Found for http://127.0.0.1:30167/api/products",
+      "observations": 3,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "url": "http://127.0.0.1:30167/api/products",
+      "source": null
+    },
+    {
+      "category": "accessibility",
+      "signature": "accessibility|image-alt",
+      "severity": "critical",
+      "message": "image-alt: Images must have alternative text",
+      "observations": 1,
+      "viewports": [
+        "desktop"
+      ],
+      "url": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright",
+      "source": null
+    },
+    {
+      "category": "accessibility",
+      "signature": "accessibility|label",
+      "severity": "critical",
+      "message": "label: Form elements must have labels",
+      "observations": 1,
+      "viewports": [
+        "desktop"
+      ],
+      "url": "https://dequeuniversity.com/rules/axe/4.11/label?application=playwright",
+      "source": null
+    }
+  ],
+  "summary": {
+    "viewportsChecked": 3,
+    "viewportsTotal": 3,
+    "observations": {
+      "console": 9,
+      "pageErrors": 3,
+      "failedRequests": 3,
+      "httpErrors": 3,
+      "accessibility": 2,
+      "security": 0
+    },
+    "uniqueIssues": {
+      "console": 3,
+      "pageErrors": 1,
+      "failedRequests": 1,
+      "httpErrors": 1,
+      "accessibility": 2,
+      "security": 0
+    },
+    "status": "fail",
+    "topIssues": [
+      "1 unique page error · 3 observations",
+      "3 unique console errors · 9 observations",
+      "1 unique HTTP error · 3 observations",
+      "1 unique failed request · 3 observations",
+      "2 unique accessibility findings · 2 observations"
+    ]
+  }
+}
