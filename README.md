@@ -106,8 +106,7 @@ vibecheck/
 | `npm run dev:fixture`              | Run the demo fixture (http://localhost:4173)                        |
 | `npm run dev:report`               | Run the report viewer (http://localhost:4174)                       |
 | `npm run scan -- --url <url>`      | Scan a local URL                                                    |
-| `npm run scan:demo`                | Build + serve + scan the demo fixture (ephemeral)                   |
-| `npm run generate:demo-report`     | Same as `scan:demo`; never touches the committed snapshot           |
+| `npm run scan:demo`                | Build + serve + scan the demo fixture; never touches the snapshot   |
 | `npm run update:demo-snapshot`     | Refresh the committed curated snapshot in the viewer                |
 | `npm run verify:demo-snapshot`     | Validate the committed snapshot                                     |
 | `npm run update:viewer-screenshot` | Re-shoot the README image from the committed snapshot               |

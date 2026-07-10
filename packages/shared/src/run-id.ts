@@ -1,11 +1,9 @@
 /**
- * Run-ID generation and filesystem-safe name helpers.
+ * Run-ID generation and validation.
  *
  * Run IDs are used as directory names under reports/, so they must be unique,
  * sortable, and safe on Windows and POSIX filesystems.
  */
-
-const UNSAFE_CHARS = /[^a-zA-Z0-9._-]/g;
 
 /** Reserved device names on Windows that must never be used as a path segment. */
 const WINDOWS_RESERVED = new Set([
@@ -16,22 +14,6 @@ const WINDOWS_RESERVED = new Set([
   ...Array.from({ length: 9 }, (_, i) => `com${i + 1}`),
   ...Array.from({ length: 9 }, (_, i) => `lpt${i + 1}`),
 ]);
-
-/**
- * Make an arbitrary string safe to use as a single path segment.
- * Replaces unsafe characters, trims separators, and avoids reserved names.
- */
-export function toFilesystemSafe(input: string, fallback = 'item'): string {
-  let safe = input.normalize('NFKD').replace(UNSAFE_CHARS, '-');
-  safe = safe.replace(/-+/g, '-').replace(/^[-.]+|[-.]+$/g, '');
-  if (safe.length === 0) {
-    safe = fallback;
-  }
-  if (WINDOWS_RESERVED.has(safe.toLowerCase())) {
-    safe = `${safe}-x`;
-  }
-  return safe.slice(0, 80);
-}
 
 /** Format a Date as a compact, sortable, filesystem-safe timestamp. */
 export function timestampSlug(date: Date): string {

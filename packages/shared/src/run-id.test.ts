@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createRunId, isSafeRunId, timestampSlug, toFilesystemSafe } from './run-id.js';
+import { createRunId, isSafeRunId, timestampSlug } from './run-id.js';
 
 const SAFE_SEGMENT = /^[a-zA-Z0-9._-]+$/;
 
@@ -24,20 +24,6 @@ describe('createRunId', () => {
 describe('timestampSlug', () => {
   it('zero-pads all fields', () => {
     expect(timestampSlug(new Date('2026-01-02T03:04:05.006Z'))).toBe('20260102-030405-006');
-  });
-});
-
-describe('toFilesystemSafe', () => {
-  it('replaces unsafe characters', () => {
-    expect(toFilesystemSafe('a/b\\c:d*e')).toMatch(SAFE_SEGMENT);
-  });
-
-  it('avoids Windows reserved names', () => {
-    expect(toFilesystemSafe('CON')).not.toBe('CON');
-  });
-
-  it('falls back when input is empty after sanitising', () => {
-    expect(toFilesystemSafe('///', 'fallback')).toBe('fallback');
   });
 });
 

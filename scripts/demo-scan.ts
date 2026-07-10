@@ -4,7 +4,7 @@
  * Builds the demo fixture (if needed), serves it on loopback, scans it across
  * three viewports and writes a validated report under reports/<runId>/.
  *
- *   npm run generate:demo-report   -> ephemeral scan only (ignored by git)
+ *   npm run scan:demo              -> ephemeral scan only (ignored by git)
  *   npm run update:demo-snapshot   -> also refresh the COMMITTED curated snapshot
  *                                     in apps/report-viewer/public/report/, then verify it
  *

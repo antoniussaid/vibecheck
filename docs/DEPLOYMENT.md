@@ -16,7 +16,7 @@ backend-free, secret-free static page.
 
 ## What stays local
 
-`packages/scanner`, the demo fixture build/serve flow, `generate:demo-report`,
+`packages/scanner`, the demo fixture build/serve flow, `scan:demo`,
 `update:demo-snapshot` and the Playwright browser — all local-only.
 
 ## Cloudflare Pages — exact build settings
@@ -96,7 +96,7 @@ npm run verify:demo-snapshot
 ```
 
 Commit the updated snapshot; the next Pages build publishes it. A normal
-`generate:demo-report` never touches the committed snapshot.
+`scan:demo` never touches the committed snapshot.
 
 ## Rollback
 
