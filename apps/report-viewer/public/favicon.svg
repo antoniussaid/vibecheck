@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="VibeCheck">
+  <title>VibeCheck</title>
+  <rect width="32" height="32" rx="7" fill="#0f1419" />
+  <rect x="6.5" y="9" width="19" height="15" rx="3" fill="none" stroke="#5b9dff" stroke-width="2.4" />
+  <path d="M7.7 14h16.6" stroke="#5b9dff" stroke-width="1.8" opacity="0.5" />
+  <circle cx="24.5" cy="8.5" r="5" fill="#0f1419" />
+  <circle cx="24.5" cy="8.5" r="3.1" fill="#e0625f" />
+</svg>
