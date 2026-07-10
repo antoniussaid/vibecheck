@@ -16,4 +16,14 @@
   "assets": {
     "directory": "./apps/report-viewer/dist",
   },
+
+  // The demo lives on a subdomain of the portfolio domain. Cloudflare creates the
+  // DNS record and issues the certificate on deploy, so the hostname is declared
+  // here rather than clicked into a dashboard nobody can review.
+  "routes": [
+    {
+      "pattern": "vibecheck.antonius.app",
+      "custom_domain": true,
+    },
+  ],
 }
