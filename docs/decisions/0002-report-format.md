@@ -1,7 +1,7 @@
 # 0002 — Report format: versioned JSON validated with zod on both sides
 
-- **Status:** Accepted (updated in fix wave 0.1)
-- **Date:** 2026-06-14 (updated 2026-06-15)
+- **Status:** Accepted (revised)
+- **Date:** 2026-06-14 (revised 2026-06-15)
 
 ## Context
 

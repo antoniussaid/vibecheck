@@ -26,8 +26,8 @@ reports/*
 !reports/.gitkeep
 
 # NOTE: the curated public demo snapshot under
-# apps/report-viewer/public/report/ is intentionally COMMITTED (see PUB-001).
-# Only ephemeral scans under reports/ are ignored.
+# apps/report-viewer/public/report/ is intentionally COMMITTED, so the viewer has
+# something to render without a scan. Only ephemeral scans under reports/ are ignored.
 
 # Environment / local
 .env

@@ -1,4 +1,4 @@
-# Architecture — VibeCheck (Wave 0)
+# Architecture — VibeCheck
 
 ## Overview
 

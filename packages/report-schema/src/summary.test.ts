@@ -98,7 +98,7 @@ describe('computeSummary', () => {
     expect(summary.uniqueIssues.security).toBe(1);
   });
 
-  it('separates raw observations from unique issues across viewports (DAT-001)', () => {
+  it('separates raw observations from unique issues across viewports', () => {
     const input = emptyInput();
     input.viewportResults = VIEWPORTS.map(() => ({ ok: true }));
     // Same console error on all three viewports = 1 unique issue, 3 observations.

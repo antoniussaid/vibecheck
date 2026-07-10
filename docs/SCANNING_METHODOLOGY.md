@@ -1,4 +1,4 @@
-# Scanning Methodology — VibeCheck (Wave 0)
+# Scanning Methodology — VibeCheck
 
 ## How a scan runs
 

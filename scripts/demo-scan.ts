@@ -9,7 +9,7 @@
  *                                     in apps/report-viewer/public/report/, then verify it
  *
  * A normal demo scan never overwrites the curated public snapshot; refreshing it
- * is an explicit, separate command (PUB-001).
+ * is an explicit, separate command.
  */
 import { execSync } from 'node:child_process';
 import { copyFile, mkdir, readdir, rm } from 'node:fs/promises';

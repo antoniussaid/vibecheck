@@ -1,5 +1,5 @@
 /**
- * Verify the curated public demo snapshot (PUB-001).
+ * Verify the curated public demo snapshot.
  *
  * Checks that apps/report-viewer/public/report/report.json:
  *   - is valid JSON and passes the runtime report schema,

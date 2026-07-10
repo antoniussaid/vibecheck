@@ -7,8 +7,9 @@
 
 Validating only the initial target URL is not enough: a local page can redirect
 the browser off loopback, or load external scripts/images/fonts/fetches/frames/
-WebSockets, or use a service worker. The independent review (SEC-001) showed the
-"loopback only" claim was true only for the initial navigation.
+WebSockets, or use a service worker. An independent review of the first
+implementation showed the "loopback only" claim held only for the initial
+navigation.
 
 ## Decision
 
@@ -33,7 +34,7 @@ Policy blocks are de-duplicated against ordinary failed requests, force
 
 - **Only re-validate the final URL:** misses subresources, frames and WebSockets.
 - **Proxy/allow-list at the OS/network layer:** heavier and out of scope for a
-  local-first Wave 0.
+  local-first tool.
 
 ## Consequences
 

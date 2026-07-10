@@ -21,7 +21,7 @@ function parseArgs(argv: string[]): CliArgs {
 }
 
 function printHelp(): void {
-  console.log(`VibeCheck scanner (Wave 0)
+  console.log(`VibeCheck scanner
 
 Usage:
   npm run scan -- --url <http://localhost:PORT>
@@ -29,7 +29,7 @@ Usage:
 Notes:
   - Only loopback hosts are allowed: localhost, 127.0.0.1, ::1
   - Reports are always written under the project's reports/<runId>/ directory.
-    Wave 0 deliberately does not expose a free output path.
+    The CLI deliberately does not expose a free output path.
 `);
 }
 
@@ -41,7 +41,8 @@ async function main(): Promise<void> {
     process.exit(args.help ? 0 : 2);
   }
 
-  // Wave 0: reports always go under <project>/reports. No free --out (PATH-001).
+  // Reports always go under <project>/reports. Deliberately no free --out: an
+  // attacker-supplied output path is a directory-traversal surface.
   const outputRoot = resolve(process.cwd(), 'reports');
 
   try {

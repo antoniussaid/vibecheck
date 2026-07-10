@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { isSafeRelativeReportPath } from '@vibecheck/shared';
 
 /**
- * Versioned VibeCheck report schema (Wave 0).
+ * Versioned VibeCheck report schema.
  *
  * The schema is the contract between the scanner (producer) and the report
  * viewer (consumer). Every field is derived from real, observed browser data.

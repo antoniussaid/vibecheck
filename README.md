@@ -10,8 +10,8 @@ viewports and produces a structured, reproducible quality report: screenshots,
 console events, failed network requests, HTTP errors and accessibility findings —
 each backed by real, observed evidence.
 
-> **Status: Wave 0 (+ fix wave 0.1) — local-first development build.** This is an
-> early, honest milestone. It is _not_ a hosted service. See [Scope](#scope).
+> **Status: early, local-first build (v0).** An honest first milestone, not a
+> hosted service. See [Scope](#scope).
 
 ## Live demo
 
@@ -75,7 +75,7 @@ npm run scan -- --url http://localhost:5173
 ```
 
 Only loopback hosts are accepted. Reports are always written under
-`reports/<runId>/` (Wave 0 does not expose a free output path).
+`reports/<runId>/`; the CLI deliberately exposes no free output path.
 
 ## Repository layout
 
@@ -84,7 +84,7 @@ vibecheck/
 ├── apps/
 │   ├── demo-fixture/      # "VibeCheck Demo Shop" — a deliberately flawed scan target
 │   └── report-viewer/     # React SPA that renders (and runtime-validates) a report.json
-│       └── public/report/ # committed curated demo snapshot (PUB-001)
+│       └── public/report/ # committed curated demo snapshot
 ├── packages/
 │   ├── scanner/           # Playwright + axe-core scanner, egress policy, CLI, test fixtures
 │   ├── report-schema/     # versioned zod schema + deterministic summary/grouping
@@ -111,12 +111,13 @@ vibecheck/
 
 ## Scope
 
-Wave 0 is intentionally small and local. **Roadmap, not yet implemented:**
-hosted/remote scanning, arbitrary external URLs, visual regression, Lighthouse,
-PDF export, scan history, a GitHub App/Action, per-viewport accessibility, and AI
-summaries. This build does **not** claim a public live demo, a GitHub Action,
-support for arbitrary remote URLs, AI-generated summaries, or a production-ready
-SaaS.
+This first version is intentionally small and local. **Roadmap, not yet
+implemented:** hosted/remote scanning, arbitrary external URLs, visual
+regression, Lighthouse, PDF export, scan history, a GitHub App/Action,
+per-viewport accessibility, and AI summaries. This build does **not** claim
+support for arbitrary remote URLs, AI-generated summaries, a scanning GitHub
+Action, or a production-ready SaaS. (The workflow in `.github/` only runs this
+repository's own quality gates.)
 
 ## License
 

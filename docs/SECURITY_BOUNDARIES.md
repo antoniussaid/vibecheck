@@ -1,4 +1,4 @@
-# Security Boundaries — VibeCheck (Wave 0)
+# Security Boundaries — VibeCheck
 
 ## The single allow-list
 

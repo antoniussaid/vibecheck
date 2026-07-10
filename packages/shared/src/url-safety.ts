@@ -1,16 +1,16 @@
 /**
- * URL safety gate for VibeCheck Wave 0.
+ * URL safety gate for VibeCheck.
  *
- * Wave 0 may only ever touch the bundled local demo fixture or an explicitly
- * provided localhost URL. This module is the single, deterministic place that
- * decides whether a target URL is allowed. It is intentionally strict: it
- * allow-lists loopback hosts rather than trying to block "bad" hosts.
+ * The scanner may only ever touch the bundled local demo fixture or an
+ * explicitly provided localhost URL. This module is the single, deterministic
+ * place that decides whether a target URL is allowed. It is intentionally
+ * strict: it allow-lists loopback hosts rather than trying to block "bad" hosts.
  */
 
-/** Hosts that Wave 0 is permitted to scan. Loopback only. */
+/** Hosts the scanner is permitted to reach. Loopback only. */
 export const ALLOWED_HOSTS = ['localhost', '127.0.0.1', '::1'] as const;
 
-/** Protocols Wave 0 is permitted to open. */
+/** Protocols the scanner is permitted to open. */
 export const ALLOWED_PROTOCOLS = ['http:', 'https:'] as const;
 
 export type UrlRejectionCode =
@@ -33,7 +33,7 @@ function normalizeHostname(hostname: string): string {
 }
 
 /**
- * Validate a target URL against the Wave 0 safety boundary.
+ * Validate a target URL against the loopback safety boundary.
  *
  * Rejects, in order: unparseable URLs, embedded credentials, non-http(s)
  * protocols (e.g. file:, data:), and any host that is not loopback.
@@ -76,7 +76,7 @@ export function validateLocalUrl(input: string): UrlSafetyResult {
     return {
       ok: false,
       code: 'HOST_NOT_ALLOWED',
-      reason: `Host "${parsed.hostname}" is not allowed. Wave 0 only scans loopback hosts: ${ALLOWED_HOSTS.join(', ')}.`,
+      reason: `Host "${parsed.hostname}" is not allowed. VibeCheck only scans loopback hosts: ${ALLOWED_HOSTS.join(', ')}.`,
     };
   }
 

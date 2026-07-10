@@ -50,7 +50,7 @@ function hasInvalidHost(value: string): boolean {
   return value.includes('example.invalid');
 }
 
-describe('egress containment (SEC-001)', () => {
+describe('egress containment', () => {
   it('rejects a disallowed initial URL with ScanError(URL_NOT_ALLOWED)', async () => {
     await expect(scan({ url: 'https://example.com', outputRoot })).rejects.toMatchObject({
       name: 'ScanError',

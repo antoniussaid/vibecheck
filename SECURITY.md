@@ -1,8 +1,8 @@
 # Security Policy
 
-## Wave 0 safety boundary
+## Safety boundary
 
-VibeCheck Wave 0 is a **local-first** tool. It scans only:
+VibeCheck is a **local-first** tool. It scans only:
 
 1. the bundled local demo fixture, and
 2. explicitly provided **localhost** URLs.

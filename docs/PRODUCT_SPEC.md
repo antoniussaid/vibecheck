@@ -1,4 +1,4 @@
-# Product Spec — VibeCheck (Wave 0)
+# Product Spec — VibeCheck
 
 ## Pitch
 
@@ -26,7 +26,7 @@ console output, cannot capture a 390 px screenshot, and cannot produce a
 verifiable artifact. VibeCheck's value is **evidence**: the report only exists
 because a real browser produced it.
 
-## Wave 0 scope (implemented)
+## Current scope (implemented)
 
 - Local-first scanning of the bundled demo fixture and explicit localhost URLs.
 - Real Chromium sessions via Playwright across three viewports.
@@ -38,7 +38,7 @@ because a real browser produced it.
 - High-quality React report viewer.
 - One-command reproducible demo scan.
 
-## Out of scope for Wave 0 (roadmap)
+## Out of scope (roadmap)
 
 - Hosted / remote SaaS scanning and arbitrary external URLs
 - Authentication, accounts, database, teams
