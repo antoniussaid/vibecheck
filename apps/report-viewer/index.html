@@ -12,7 +12,8 @@
       content="A reproducible quality report for a web prototype: screenshots, console errors, failed requests and accessibility findings, all observed in a real browser session."
     />
 
-    <!-- og:url and og:image follow once the demo has a public URL to point at. -->
+    <!-- Absolute URLs are required by Open Graph. They pin this build to the
+         public demo host; update both if the demo ever moves. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="VibeCheck" />
     <meta property="og:title" content="VibeCheck — Prototype Quality Report" />
@@ -20,7 +21,15 @@
       property="og:description"
       content="A reproducible quality report for a web prototype, backed by real browser evidence."
     />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://vibecheck.antonius.app/" />
+    <meta property="og:image" content="https://vibecheck.antonius.app/og-image.png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta
+      property="og:image:alt"
+      content="The VibeCheck report viewer showing a failing scan: 8 unique issues from 20 observations across three viewports."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>

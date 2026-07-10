@@ -57,7 +57,7 @@ Cloudflare API token, which the dashboard creates and stores for the project.
 The build command builds only the viewer workspace (`vite build` for
 `@vibecheck/report-viewer`), which inlines the report-schema validation and emits
 a fully static `apps/report-viewer/dist/` containing `index.html`, `favicon.svg`,
-hashed JS/CSS assets and `report/` (the curated `report.json` +
+`og-image.png`, hashed JS/CSS assets and `report/` (the curated `report.json` +
 `desktop/tablet/mobile` screenshots, copied from `apps/report-viewer/public/`).
 
 ## Local reproduction
@@ -93,11 +93,20 @@ The viewer is a single page using in-page hash anchors (`#overview`, `#console`,
 future version adds real path routes, set `assets.not_found_handling` to
 `single-page-application` in `wrangler.jsonc`.
 
-## Later: custom domain
+## The public address
 
-After the `*.workers.dev` deployment is confirmed working, a custom domain such
-as `vibecheck.antonius.app` can be attached under the Worker's **Domains &
-Routes**. Until that exists, no live-demo URL is published in this repository.
+The demo answers on **`vibecheck.antonius.app`**, declared as a `custom_domain`
+route in `wrangler.jsonc`. Cloudflare creates the DNS record and issues the
+certificate on deploy; nothing is clicked into the dashboard.
+
+`workers_dev` is set to `false`, so the worker does not also answer on a
+`*.workers.dev` address. Declaring a route already has that effect, but the
+documentation only states that `workers_dev` defaults to `true` — the demo's
+single public address should not rest on undocumented behaviour.
+
+The Open Graph tags in `apps/report-viewer/index.html` carry absolute URLs, as
+the protocol requires. If the demo ever moves, `og:url` and `og:image` move with
+it.
 
 ## Updating the curated snapshot
 

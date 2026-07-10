@@ -20,11 +20,12 @@ each backed by real, observed evidence.
 
 ## Live demo
 
-A static **read-only** demo of the report viewer (with the committed example
-report) is being prepared for Cloudflare Workers — it renders the curated
-snapshot with no backend and no scanner. The public URL will be added here once
-it is live; until then it is **not yet deployed**. The scanner itself always runs
-locally and only against loopback targets. See
+**[vibecheck.antonius.app](https://vibecheck.antonius.app)** — the report viewer
+rendering the snapshot committed in this repository.
+
+It is a **read-only static page**: no backend, no database, no scanner. Nothing
+you can click there runs a browser. The scanner itself never leaves your machine
+and only ever touches loopback targets. See
 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
 ## Why this is not a ChatGPT prompt

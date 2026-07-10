@@ -26,4 +26,9 @@
       "custom_domain": true,
     },
   ],
+
+  // Declaring a route already stopped the worker answering on its workers.dev
+  // subdomain, but the documentation only says this defaults to true. State it,
+  // so the demo's single public address does not rest on undocumented behaviour.
+  "workers_dev": false,
 }
