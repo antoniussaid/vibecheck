@@ -27,13 +27,19 @@ afterAll(async () => {
   }
 });
 
+// A generous navigation budget: these scans drive a real browser across three
+// viewports on a possibly loaded machine, and a stalled viewport would turn an
+// egress assertion into a confusing timing failure. Production defaults are
+// deliberately much lower and stay unchanged.
+const SCAN_BUDGET = { navigationTimeoutMs: 60_000, settleMs: 1_500 } as const;
+
 async function scanDir(
   fixture: string,
   pathAndQuery = '',
 ): Promise<{ report: VibeCheckReport; server: StaticServer }> {
   const server = await serveDirectory(join(fixturesRoot, fixture));
   try {
-    const { report } = await scan({ url: server.url + pathAndQuery, outputRoot });
+    const { report } = await scan({ url: server.url + pathAndQuery, outputRoot, ...SCAN_BUDGET });
     return { report, server };
   } finally {
     await server.close();
@@ -105,6 +111,7 @@ describe('egress containment (SEC-001)', () => {
       const { report } = await scan({
         url: server.url + `__vibecheck/redirect?to=${encodeURIComponent(target)}`,
         outputRoot,
+        ...SCAN_BUDGET,
       });
       expect(report.securityFindings).toHaveLength(0);
       expect(report.finalUrl).toContain('other.html');
