@@ -5,8 +5,15 @@ are welcome.
 
 ## Prerequisites
 
-- Node.js ≥ 20 (developed on Node 24)
-- npm ≥ 10
+Use the Node version in [`.node-version`](.node-version) — CI and the Cloudflare
+Pages build both read that file, and `nvm`/`fnm`/`volta` pick it up automatically.
+
+It pins Node 22, which ships **npm 10**. That matters: npm 11 resolves optional
+transitive dependencies differently and will silently drop entries from
+`package-lock.json` that npm 10 requires, after which `npm ci` fails on a clean
+machine. If CI reports `npm ci can only install packages when your package.json
+and package-lock.json are in sync`, the lockfile was regenerated on the wrong npm
+major — restore it and rerun `npm install` on the pinned Node.
 
 ## Setup
 

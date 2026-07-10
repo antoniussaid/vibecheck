@@ -6,7 +6,8 @@
   "description": "VibeCheck – Automated Prototype Quality Lab. Turn a web prototype into a reproducible visual quality report with real browser evidence.",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.13",
+    "npm": ">=10.9"
   },
   "workspaces": [
     "packages/*",

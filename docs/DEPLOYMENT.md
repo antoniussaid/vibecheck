@@ -29,7 +29,7 @@ backend-free, secret-free static page.
 | Install command        | `npm ci`                                                             |
 | Build command          | `npm run build:viewer`                                               |
 | Build output directory | `apps/report-viewer/dist`                                            |
-| Node version           | `22.12.0` (pinned via `.node-version`; satisfies Vite 8's `>=22.12`) |
+| Node version           | `22.23.1` (pinned via `.node-version`; satisfies Vite 8's `>=22.12`) |
 
 ### Environment variables
 
