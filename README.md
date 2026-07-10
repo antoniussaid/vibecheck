@@ -5,6 +5,11 @@
 
 > Turn a web prototype into a reproducible visual quality report with real browser evidence.
 
+![The VibeCheck report viewer: a failing scan of the demo prototype, showing 8 unique issues from 20 observations across three viewports, with screenshots of the desktop, tablet and mobile renderings.](docs/assets/report-viewer.png)
+
+_The report above is the snapshot committed in this repository. Every number in
+it came from a real Chromium session — reproduce it with `npm run scan:demo`._
+
 VibeCheck opens a **local** web prototype in real Chromium sessions across three
 viewports and produces a structured, reproducible quality report: screenshots,
 console events, failed network requests, HTTP errors and accessibility findings —
@@ -96,18 +101,19 @@ vibecheck/
 
 ## Scripts
 
-| Script                          | Purpose                                                             |
-| ------------------------------- | ------------------------------------------------------------------- |
-| `npm run dev:fixture`           | Run the demo fixture (http://localhost:4173)                        |
-| `npm run dev:report`            | Run the report viewer (http://localhost:4174)                       |
-| `npm run scan -- --url <url>`   | Scan a local URL                                                    |
-| `npm run scan:demo`             | Build + serve + scan the demo fixture (ephemeral)                   |
-| `npm run generate:demo-report`  | Same as `scan:demo`; never touches the committed snapshot           |
-| `npm run update:demo-snapshot`  | Refresh the committed curated snapshot in the viewer                |
-| `npm run verify:demo-snapshot`  | Validate the committed snapshot                                     |
-| `npm test`                      | Run all unit + integration tests (portable, project-local Chromium) |
-| `npm run lint` / `format:check` | ESLint / Prettier                                                   |
-| `npm run build`                 | Type-check packages and build the apps                              |
+| Script                             | Purpose                                                             |
+| ---------------------------------- | ------------------------------------------------------------------- |
+| `npm run dev:fixture`              | Run the demo fixture (http://localhost:4173)                        |
+| `npm run dev:report`               | Run the report viewer (http://localhost:4174)                       |
+| `npm run scan -- --url <url>`      | Scan a local URL                                                    |
+| `npm run scan:demo`                | Build + serve + scan the demo fixture (ephemeral)                   |
+| `npm run generate:demo-report`     | Same as `scan:demo`; never touches the committed snapshot           |
+| `npm run update:demo-snapshot`     | Refresh the committed curated snapshot in the viewer                |
+| `npm run verify:demo-snapshot`     | Validate the committed snapshot                                     |
+| `npm run update:viewer-screenshot` | Re-shoot the README image from the committed snapshot               |
+| `npm test`                         | Run all unit + integration tests (portable, project-local Chromium) |
+| `npm run lint` / `format:check`    | ESLint / Prettier                                                   |
+| `npm run build`                    | Type-check packages and build the apps                              |
 
 ## Scope
 

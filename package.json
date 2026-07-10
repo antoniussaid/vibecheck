@@ -26,6 +26,7 @@
     "scan:demo": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx scripts/demo-scan.ts",
     "generate:demo-report": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx scripts/demo-scan.ts",
     "update:demo-snapshot": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx scripts/demo-scan.ts --snapshot",
+    "update:viewer-screenshot": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 tsx scripts/capture-viewer-screenshot.ts",
     "verify:demo-snapshot": "tsx scripts/verify-demo-snapshot.ts",
     "playwright:install": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium"
   },
