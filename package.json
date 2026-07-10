@@ -1,10 +1,29 @@
 {
   "name": "vibecheck",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "VibeCheck – Automated Prototype Quality Lab. Turn a web prototype into a reproducible visual quality report with real browser evidence.",
+  "description": "VibeCheck — Automated Prototype Quality Lab. Turn a web prototype into a reproducible visual quality report with real browser evidence.",
+  "keywords": [
+    "playwright",
+    "axe-core",
+    "accessibility",
+    "web-quality",
+    "screenshots",
+    "testing",
+    "developer-tools",
+    "typescript"
+  ],
+  "author": "ANTONIUS",
   "license": "MIT",
+  "homepage": "https://github.com/antoniussaid/vibecheck#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniussaid/vibecheck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antoniussaid/vibecheck/issues"
+  },
   "engines": {
     "node": ">=22.13",
     "npm": ">=10.9"
