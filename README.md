@@ -1,5 +1,8 @@
 # VibeCheck — Automated Prototype Quality Lab
 
+[![CI](https://github.com/antoniussaid/vibecheck/actions/workflows/ci.yml/badge.svg)](https://github.com/antoniussaid/vibecheck/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 > Turn a web prototype into a reproducible visual quality report with real browser evidence.
 
 VibeCheck opens a **local** web prototype in real Chromium sessions across three

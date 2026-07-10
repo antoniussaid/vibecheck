@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  quality-gates:
+    name: Quality gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # Keep Chromium inside node_modules, exactly as the local scripts do, so CI
+      # exercises the same portable browser resolution the scanner relies on.
+      PLAYWRIGHT_BROWSERS_PATH: '0'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium and its system libraries
+        run: npx playwright install --with-deps chromium
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Type-check and build
+        run: npm run build
+
+      - name: Test (unit + real-browser integration)
+        run: npm test
+
+      - name: Verify the committed demo snapshot
+        run: npm run verify:demo-snapshot
+
+      # The runtime dependency chain ships to whoever installs this: no known
+      # vulnerability is acceptable. The dev toolchain never ships, so it blocks
+      # only on advisories that are high or critical.
+      - name: Audit runtime dependencies
+        run: npm audit --omit=dev --audit-level=low
+
+      - name: Audit dev toolchain
+        run: npm audit --audit-level=high
