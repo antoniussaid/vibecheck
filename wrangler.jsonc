@@ -1,0 +1,19 @@
+{
+  // Deploys the built report viewer as a static site on Cloudflare Workers.
+  //
+  // There is no `main` entry point on purpose: this project ships no server code.
+  // Every request is answered from the uploaded assets, so no Worker is invoked,
+  // and nothing here can reach the scanner — which never leaves this repository.
+  //
+  //   npm run build:viewer     # produces apps/report-viewer/dist
+  //   npx wrangler@4 deploy    # uploads that directory
+  //
+  // Wrangler is deliberately not a devDependency: it is needed only at deploy
+  // time, on Cloudflare's builder. Adding it would make every `npm ci` — local
+  // and CI — download a toolchain that no test, lint or build step ever calls.
+  "name": "vibecheck",
+  "compatibility_date": "2026-07-10",
+  "assets": {
+    "directory": "./apps/report-viewer/dist",
+  },
+}

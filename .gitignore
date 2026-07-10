@@ -21,6 +21,9 @@ CLAUDE_WAVE0_SELF_REVIEW.md
 # Temporary test output (kept inside the project, never committed)
 .tmp-test/
 
+# Wrangler's local state and build cache
+.wrangler/
+
 # Ephemeral scan reports (artifacts, not source)
 reports/*
 !reports/.gitkeep

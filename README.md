@@ -21,9 +21,9 @@ each backed by real, observed evidence.
 ## Live demo
 
 A static **read-only** demo of the report viewer (with the committed example
-report) is being prepared for Cloudflare Pages — it renders the curated snapshot
-with no backend and no scanner. The public URL will be added here once it is
-live; until then it is **not yet deployed**. The scanner itself always runs
+report) is being prepared for Cloudflare Workers — it renders the curated
+snapshot with no backend and no scanner. The public URL will be added here once
+it is live; until then it is **not yet deployed**. The scanner itself always runs
 locally and only against loopback targets. See
 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
