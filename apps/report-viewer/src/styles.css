@@ -108,6 +108,7 @@ pre {
 .content {
   padding: 32px 36px 80px;
   max-width: 1080px;
+  min-width: 0; /* let the column shrink below its content's intrinsic width */
 }
 
 /* Hero ------------------------------------------------------------------ */
@@ -226,6 +227,7 @@ pre {
   border-radius: 10px;
   padding: 14px;
   text-align: center;
+  min-width: 0;
 }
 
 .count--hot {
@@ -441,7 +443,7 @@ pre {
 
 .list__row {
   display: grid;
-  grid-template-columns: 78px 1fr;
+  grid-template-columns: 78px minmax(0, 1fr);
   gap: 12px;
   background: var(--panel);
   border: 1px solid var(--line);
@@ -452,6 +454,7 @@ pre {
 .list__msg {
   margin: 0;
   font-size: 14px;
+  overflow-wrap: anywhere;
 }
 
 .list__meta {
@@ -476,6 +479,12 @@ pre {
   white-space: pre-wrap;
   word-break: break-word;
   color: var(--muted);
+}
+
+/* a wide table scrolls inside its own box instead of stretching the page */
+.table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .table {
@@ -584,7 +593,10 @@ pre {
 /* Responsive ------------------------------------------------------------ */
 @media (max-width: 900px) {
   .shell {
-    grid-template-columns: 1fr;
+    /* minmax(0, …) lets the single column shrink below the intrinsic width of
+       its content — without it, a wide child (e.g. the network table) stretches
+       the whole page and everything scrolls sideways. */
+    grid-template-columns: minmax(0, 1fr);
   }
   .sidenav {
     position: static;
@@ -600,7 +612,7 @@ pre {
     padding: 24px 18px 64px;
   }
   .counts {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .hero__shots,
   .gallery {
@@ -608,5 +620,8 @@ pre {
   }
   .meta-grid {
     grid-template-columns: 1fr;
+  }
+  .hero__status {
+    text-align: left;
   }
 }

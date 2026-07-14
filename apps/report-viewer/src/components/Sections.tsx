@@ -128,44 +128,46 @@ export function NetworkSection({ report }: { report: VibeCheckReport }): JSX.Ele
       {total === 0 ? (
         <EmptyState>No failed requests or HTTP errors were recorded.</EmptyState>
       ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Severity</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Method</th>
-              <th>URL</th>
-              <th>Viewport</th>
-            </tr>
-          </thead>
-          <tbody>
-            {report.httpErrors.map((e, i) => (
-              <tr key={`h${i}`}>
-                <td>
-                  <SeverityTag severity={e.severity} />
-                </td>
-                <td>HTTP</td>
-                <td>{e.status}</td>
-                <td>{e.method}</td>
-                <td className="cell-url">{e.requestUrl}</td>
-                <td>{e.viewport}</td>
+        <div className="table-wrap">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Severity</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Method</th>
+                <th>URL</th>
+                <th>Viewport</th>
               </tr>
-            ))}
-            {report.failedRequests.map((e, i) => (
-              <tr key={`f${i}`}>
-                <td>
-                  <SeverityTag severity={e.severity} />
-                </td>
-                <td>Network</td>
-                <td>{e.message}</td>
-                <td>{e.method}</td>
-                <td className="cell-url">{e.requestUrl}</td>
-                <td>{e.viewport}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {report.httpErrors.map((e, i) => (
+                <tr key={`h${i}`}>
+                  <td>
+                    <SeverityTag severity={e.severity} />
+                  </td>
+                  <td>HTTP</td>
+                  <td>{e.status}</td>
+                  <td>{e.method}</td>
+                  <td className="cell-url">{e.requestUrl}</td>
+                  <td>{e.viewport}</td>
+                </tr>
+              ))}
+              {report.failedRequests.map((e, i) => (
+                <tr key={`f${i}`}>
+                  <td>
+                    <SeverityTag severity={e.severity} />
+                  </td>
+                  <td>Network</td>
+                  <td>{e.message}</td>
+                  <td>{e.method}</td>
+                  <td className="cell-url">{e.requestUrl}</td>
+                  <td>{e.viewport}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </Section>
   );
