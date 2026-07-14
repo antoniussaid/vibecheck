@@ -128,7 +128,12 @@ export function NetworkSection({ report }: { report: VibeCheckReport }): JSX.Ele
       {total === 0 ? (
         <EmptyState>No failed requests or HTTP errors were recorded.</EmptyState>
       ) : (
-        <div className="table-wrap">
+        <div
+          className="table-wrap"
+          role="region"
+          aria-label="Network requests and HTTP errors (scrollable)"
+          tabIndex={0}
+        >
           <table className="table">
             <thead>
               <tr>

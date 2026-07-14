@@ -5,16 +5,18 @@
   --line: #283140;
   --ink: #e6ebf2;
   --muted: #9aa7b8;
-  --faint: #6b7686;
+  /* faint/fail/error meet WCAG AA (>=4.5:1) as text on the darkest panels — the
+     same color-contrast check axe-core runs in every report this tool produces. */
+  --faint: #8a95a6;
   --accent: #5b9dff;
 
   --pass: #3fb27f;
   --attention: #e0a042;
-  --fail: #e0625f;
+  --fail: #ea7b79;
 
-  --sev-info: #6b7686;
+  --sev-info: #8a95a6;
   --sev-warning: #e0a042;
-  --sev-error: #e0625f;
+  --sev-error: #ea7b79;
   --sev-critical: #c2410c;
 
   --radius: 12px;
