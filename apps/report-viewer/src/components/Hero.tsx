@@ -50,6 +50,29 @@ export function Hero({ report }: { report: VibeCheckReport }): JSX.Element {
         </div>
       </div>
 
+      <form
+        className="scanbar"
+        aria-label="Scan a local prototype"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <span className="scanbar__scheme">http://</span>
+        <input
+          className="scanbar__input"
+          type="text"
+          defaultValue="localhost:3000"
+          disabled
+          aria-disabled="true"
+          aria-label="Local prototype URL"
+        />
+        <button className="scanbar__btn" type="button" disabled aria-disabled="true">
+          Scan
+        </button>
+      </form>
+      <p className="scanbar__note">
+        The scanner runs on your machine, not here. Point it at a local prototype:{' '}
+        <code>npm run scan http://localhost:3000</code>
+      </p>
+
       <p className="hero__rollup">
         <strong>{totalUnique}</strong> unique issues · <strong>{totalObservations}</strong>{' '}
         observations across {summary.viewportsTotal} viewports
