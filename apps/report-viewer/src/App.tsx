@@ -36,7 +36,7 @@ export function App(): JSX.Element {
     return (
       <div className="shell">
         <div className="placeholder">
-          <p className="hero__eyebrow">VibeCheck — Automated Prototype Quality Lab</p>
+          <p className="hero__eyebrow">VibeCheck: Automated Prototype Quality Lab</p>
           <h1 className="hero__pitch">No report published yet.</h1>
           <p>Generate the curated demo snapshot, then reload this page:</p>
           <pre className="code">npm run update:demo-snapshot</pre>

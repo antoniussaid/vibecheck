@@ -20,7 +20,7 @@ export function Hero({ report }: { report: VibeCheckReport }): JSX.Element {
     <section className="hero" aria-label="Report overview">
       <div className="hero__head">
         <div>
-          <p className="hero__eyebrow">VibeCheck — Automated Prototype Quality Lab</p>
+          <p className="hero__eyebrow">VibeCheck: Automated Prototype Quality Lab</p>
           <h1 className="hero__pitch">
             Turn a web prototype into a reproducible visual quality report with real browser
             evidence.

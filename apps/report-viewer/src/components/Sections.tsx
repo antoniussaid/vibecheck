@@ -191,7 +191,7 @@ export function AccessibilitySection({ report }: { report: VibeCheckReport }): J
               <SeverityTag severity={f.severity} />
               <div>
                 <p className="list__msg">
-                  <strong>{f.ruleId}</strong> — {f.message}
+                  <strong>{f.ruleId}</strong>: {f.message}
                 </p>
                 <p className="list__meta">
                   impact: {f.impact ?? 'n/a'} · viewport: {f.viewport} · {f.nodes.length} element(s)
@@ -224,8 +224,7 @@ export function SecuritySection({ report }: { report: VibeCheckReport }): JSX.El
     <Section id="security" title="Security policy" count={findings.length}>
       {findings.length === 0 ? (
         <EmptyState>
-          No egress policy violations — every request stayed on loopback (localhost, 127.0.0.1,
-          ::1).
+          No egress policy violations. Every request stayed on loopback (localhost, 127.0.0.1, ::1).
         </EmptyState>
       ) : (
         <ul className="list">
@@ -292,7 +291,7 @@ export function MethodologySection(): JSX.Element {
           console error, failed request, HTTP error, critical accessibility finding or blocked
           egress. <strong>Needs attention</strong> when there are non-blocking accessibility
           findings, console warnings or a viewport that failed to render. <strong>Pass</strong>{' '}
-          otherwise. The same input always produces the same status — there is no opaque numeric
+          otherwise. The same input always produces the same status; there is no opaque numeric
           score.
         </p>
         <p>
