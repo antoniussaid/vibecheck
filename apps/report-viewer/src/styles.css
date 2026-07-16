@@ -111,6 +111,20 @@ pre {
   color: var(--ink);
 }
 
+.sidenav__repo {
+  display: inline-block;
+  margin: 22px 0 0 10px;
+  color: var(--faint);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+.sidenav__repo:hover {
+  color: var(--ink);
+}
+
 .content {
   padding: 32px 36px 80px;
   max-width: 1080px;
